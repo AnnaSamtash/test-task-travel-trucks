@@ -1,0 +1,16 @@
+.link {
+    display: inline-flex;
+    align-items: center;
+    padding: 16px 60px;
+    background-color: var(--button-color);
+    border-radius: 200px;
+    color: var(--white-color);
+    gap: 4px;
+    text-transform: uppercase;
+    transition: color 250ms linear;
+}
+
+.link:hover,
+.link:focus {
+    color: var(--button-hover-color);
+}

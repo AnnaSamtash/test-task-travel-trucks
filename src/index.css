@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+:root {
+  --main-font: "Inter", sans-serif;
+
+  --main-color: #101828;
+  --text-color: #475467;
+  --white-color: #FFFFFF;
+  --inputs-color: #F7F7F7;
+  --badges-color: #F2F4F7;
+  --gray-color: #6C717B;
+  --gray-light-color: #DADDE1;
+  --button-color: #E44848;
+  --button-hover-color: #D84343;
+  --rating-color: #FFC531;
+
+  --font-size-body: 16px;
+  --font-size-title-1: 32px;
+  --font-size-title-2: 24px;
+  --font-size-title-3: 20px;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+
+  font-family: var(--main-font);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.5;
+  color: var(--main-color);
+  text-align: start;
+  color-scheme: light;
+  background-color: var(--white-color);
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --font-synthesis: none;
+
+  --transition-timing-function: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset styles */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+  transition: color var(--transition-timing-function);
+}
+
+button {
+  font-family: var(--main-font);
+  font-size: inherit;
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.5;
+  border-radius: 12px;
+  padding: 18px auto 18px 18px;
+  background-color: var(--inputs-color);
+  border: none;
+  outline: transparent;
+  color: var(--main-color);
+}
+
+input::placeholder {
+  color: var(--gray-color);
+}
+
+h1 {
+  font-size: var(--font-size-title-1);
+  font-weight: var(--font-weight-semi-bold);
+  line-height: 1.5;
+  color: var(--white-color);
+}
+
+h2 {
+  font-size: var(--font-size-title-2);
+  font-weight: var(--font-weight-semi-bold);
+  line-height: 1.33;
+}
+
+h3 {
+  font-size: var(--font-size-title-3);
+  font-weight: var(--font-weight-semi-bold);
+  line-height: 1.2;
+}
+
+.visually_hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

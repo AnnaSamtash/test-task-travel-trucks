@@ -1,0 +1,53 @@
+.comon_wrapper {
+    width: 631px;
+}
+
+.reviews_list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 44px;
+}
+
+.reviews_list_item {
+    padding-bottom: 24px;
+}
+
+.avatar {
+    border-radius: 50%;
+    color: var(--button-color);
+    background-color: var(--badges-color);
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    column-gap: 16px;
+    margin-bottom: 16px;
+}
+
+.name {
+    font-weight: var(--font-weight-medium);
+    margin-bottom: 4px;
+}
+
+.default {
+    width: 16px;
+    height: 16px;
+    fill: var(--badges-color);
+    margin-right: 4px;
+    position: relative;
+    top: 4px;
+}
+
+.icon_rating {
+    fill: var(--rating-color);
+}
+
+.rating {
+    margin-right: 16px;
+}

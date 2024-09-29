@@ -1,0 +1,12 @@
+.header {
+    background-color: var(--badges-color);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    padding: 24px 64px;
+    column-gap: 450px;
+    width: 1440px;
+    margin: 0 auto;
+}

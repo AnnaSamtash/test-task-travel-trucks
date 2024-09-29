@@ -1,0 +1,48 @@
+.form {
+    width: 100%;
+    padding: 0;
+    border: none;
+}
+
+.container {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+}
+
+.form_error {
+    color: var(--button-color);
+}
+
+.form_input {
+    width: 527px;
+    height: 60px;
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-regular);
+    line-height: 1.5;
+    border-radius: 12px;
+    padding: 18px;
+    background-color: var(--inputs-color);
+    border: none;
+    outline: transparent;
+    color: var(--main-color);
+
+}
+
+.form_input::placeholder {
+    color: var(--gray-color);
+}
+
+.visually_hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
