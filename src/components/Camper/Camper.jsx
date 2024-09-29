@@ -51,8 +51,16 @@ const Camper = ({ props }) => {
           onClick={() =>
             dispatch(
               openModal({
-                img: gallery[0]?.original,
-                alt: { name } - 1,
+                img: [
+                  gallery[0]?.original,
+                  gallery[1]?.original,
+                  gallery[2]?.original,
+                ],
+                alt: [
+                  `Photo ${name} - 1`,
+                  `Photo ${name} - 2`,
+                  `Photo ${name} - 3`,
+                ],
               })
             )
           }

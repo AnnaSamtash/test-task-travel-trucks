@@ -7,10 +7,10 @@
     color: var(--white-color);
     gap: 4px;
     text-transform: uppercase;
-    transition: color 250ms linear;
+    transition: background-color var(--transition-timing-function);
 }
 
 .link:hover,
 .link:focus {
-    color: var(--button-hover-color);
+    background-color: var(--button-hover-color);
 }

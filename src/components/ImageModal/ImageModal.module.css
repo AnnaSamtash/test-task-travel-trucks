@@ -6,8 +6,8 @@
     background-color: var(--main-color);
     width: 90%;
     height: 90%;
-    display: flexbox;
-    justify-content: center;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     outline: transparent;
 }
@@ -20,4 +20,22 @@
     width: 100%;
     height: 100%;
     background-color: rgba(100, 106, 106, 0.8);
+}
+
+.prevButton,
+.nextButton {
+    background-color: transparent;
+    border: none;
+    outline: transparent;
+    color: var(--white-color);
+    padding: 6px;
+}
+
+.prevButton {
+    margin-left: -50px;
+}
+
+.nextButton {
+    position: absolute;
+    right: -50px;
 }

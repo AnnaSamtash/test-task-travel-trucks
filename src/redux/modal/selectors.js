@@ -1,3 +1,4 @@
 export const selectModalIsOpen = state => state.modal.modalIsOpen;
-export const selectModalImageSrc = state => state.modal.modalImageSrc;
-export const selectModalImageAlt = state => state.modal.modalImageAlt;
+export const selectModalImagesSrc = state => state.modal.modalImagesSrc;
+export const selectModalImagesAlt = state => state.modal.modalImagesAlt;
+export const selectCurrentIndex = state => state.modal.currentIndex;

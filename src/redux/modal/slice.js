@@ -4,22 +4,27 @@ const modalSlice = createSlice({
   name: 'modal',
   initialState: {
     modalIsOpen: false,
-    modalImageSrc: '',
-    modalImageAlt: '',
+    modalImagesSrc: [],
+    modalImagesAlt: '',
+    currentIndex: 0,
   },
   reducers: {
     openModal(state, action) {
       state.modalIsOpen = true;
-      state.modalImageSrc = action.payload.img;
-      state.modalImageAlt = action.payload.alt;
+      state.modalImagesSrc = action.payload.img;
+      state.modalImagesAlt = action.payload.alt;
+      state.currentIndex = 0;
     },
     closeModal(state) {
       state.modalIsOpen = false;
-      state.modalImageSrc = '';
-      state.modalImageAlt = '';
+      state.modalImagesSrc = '';
+      state.modalImagesAlt = '';
+    },
+    setCurrentIndex(state, action) {
+      state.currentIndex = action.payload;
     },
   },
 });
 
-export const { openModal, closeModal } = modalSlice.actions;
+export const { openModal, closeModal, setCurrentIndex } = modalSlice.actions;
 export const modalReducer = modalSlice.reducer;

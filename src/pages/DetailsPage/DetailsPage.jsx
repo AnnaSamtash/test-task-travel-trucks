@@ -78,8 +78,16 @@ const DetailsPage = () => {
                       onClick={() =>
                         dispatch(
                           openModal({
-                            img: gallery[0]?.original,
-                            alt: `Photo ${name} - 1`,
+                            img: [
+                              gallery[0]?.original,
+                              gallery[1]?.original,
+                              gallery[2]?.original,
+                            ],
+                            alt: [
+                              `Photo ${name} - 1`,
+                              `Photo ${name} - 2`,
+                              `Photo ${name} - 3`,
+                            ],
                           })
                         )
                       }
@@ -94,8 +102,16 @@ const DetailsPage = () => {
                       onClick={() =>
                         dispatch(
                           openModal({
-                            img: gallery[1]?.original,
-                            alt: `Photo ${name} - 2`,
+                            img: [
+                              gallery[1]?.original,
+                              gallery[2]?.original,
+                              gallery[0]?.original,
+                            ],
+                            alt: [
+                              `Photo ${name} - 2`,
+                              `Photo ${name} - 3`,
+                              `Photo ${name} - 1`,
+                            ],
                           })
                         )
                       }
@@ -110,8 +126,16 @@ const DetailsPage = () => {
                       onClick={() =>
                         dispatch(
                           openModal({
-                            img: gallery[2]?.original,
-                            alt: `Photo ${name} - 3`,
+                            img: [
+                              gallery[2]?.original,
+                              gallery[0]?.original,
+                              gallery[1]?.original,
+                            ],
+                            alt: [
+                              `Photo ${name} - 3`,
+                              `Photo ${name} - 1`,
+                              `Photo ${name} - 2`,
+                            ],
                           })
                         )
                       }

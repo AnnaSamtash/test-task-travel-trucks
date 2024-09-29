@@ -3,13 +3,6 @@ import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SharedLayout from './components/SharedLayout/SharedLayout.jsx';
-import {
-  selectModalImageAlt,
-  selectModalImageSrc,
-  selectModalIsOpen,
-} from './redux/modal/selectors.js';
-import { useDispatch, useSelector } from 'react-redux';
-import { closeModal } from './redux/modal/slice.js';
 import ImageModal from './components/ImageModal/ImageModal.jsx';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage.jsx'));
@@ -26,10 +19,6 @@ const NotFoundPage = lazy(() =>
 );
 
 const App = () => {
-  const modalIsOpen = useSelector(selectModalIsOpen);
-  const modalImageSrc = useSelector(selectModalImageSrc);
-  const modalImageAlt = useSelector(selectModalImageAlt);
-  const dispatch = useDispatch();
   return (
     <div
       style={{
@@ -50,14 +39,7 @@ const App = () => {
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
-      <ImageModal
-        isOpen={modalIsOpen}
-        onRequestClose={() => {
-          dispatch(closeModal());
-        }}
-        modalImageUrl={modalImageSrc}
-        modalImageAlt={modalImageAlt}
-      />
+      <ImageModal />
       <ToastContainer />
     </div>
   );
