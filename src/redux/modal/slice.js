@@ -5,7 +5,7 @@ const modalSlice = createSlice({
   initialState: {
     modalIsOpen: false,
     modalImagesSrc: [],
-    modalImagesAlt: '',
+    modalImagesAlt: [],
     currentIndex: 0,
   },
   reducers: {
@@ -17,8 +17,8 @@ const modalSlice = createSlice({
     },
     closeModal(state) {
       state.modalIsOpen = false;
-      state.modalImagesSrc = '';
-      state.modalImagesAlt = '';
+      state.modalImagesSrc = [];
+      state.modalImagesAlt = [];
     },
     setCurrentIndex(state, action) {
       state.currentIndex = action.payload;
