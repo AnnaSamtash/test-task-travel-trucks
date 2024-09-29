@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import css from './Button.module.css';
+import PropTypes from 'prop-types';
 
 const Button = ({
   children,
@@ -18,4 +19,12 @@ const Button = ({
     </button>
   );
 };
+
+Button.propTypes = {
+  type: PropTypes.string,
+  variant: PropTypes.string.isRequired,
+  selected: PropTypes.bool,
+  handleClick: PropTypes.func.isRequired,
+};
+
 export default Button;

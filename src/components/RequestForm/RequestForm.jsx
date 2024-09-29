@@ -7,7 +7,7 @@ import { postRequest } from '../../helpers/api-request';
 import showToast from '../../helpers/showToast';
 import CustomDatePicker from '../CustomDatePicker/CustomDatePicker';
 
-export default function RequestForm() {
+const RequestForm = () => {
   const RequestFormSchema = Yup.object().shape({
     name: Yup.string()
       .min(3, 'Too Short!')
@@ -136,4 +136,6 @@ export default function RequestForm() {
       </Form>
     </Formik>
   );
-}
+};
+
+export default RequestForm;

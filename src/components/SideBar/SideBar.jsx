@@ -52,6 +52,7 @@ const SideBar = () => {
 
     setSearchParams(newSearchParams);
   };
+
   return (
     <div className={css.container}>
       <SearchBox />
@@ -64,4 +65,5 @@ const SideBar = () => {
     </div>
   );
 };
+
 export default SideBar;

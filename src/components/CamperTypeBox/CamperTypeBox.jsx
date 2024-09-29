@@ -4,7 +4,7 @@ import { setFilters } from '../../redux/filters/slice.js';
 import Button from '../Button/Button.jsx';
 import css from './CamperTypeBox.module.css';
 
-export default function CamperTypeBox() {
+const CamperTypeBox = () => {
   const dispatch = useDispatch();
   const filters = useSelector(selectFilters);
   const handleFilterChange = newFilter => dispatch(setFilters(newFilter));
@@ -46,4 +46,6 @@ export default function CamperTypeBox() {
       </div>
     </div>
   );
-}
+};
+
+export default CamperTypeBox;

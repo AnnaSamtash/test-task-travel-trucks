@@ -11,7 +11,7 @@ import { fetchCamperById } from '../../redux/campers/operations';
 import Loader from '../Loader/Loader';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
-export default function CamperFeatures() {
+const CamperFeatures = () => {
   const { id } = useParams();
   const error = useSelector(selectError);
   const loading = useSelector(selectLoading);
@@ -150,4 +150,6 @@ export default function CamperFeatures() {
       )}
     </div>
   );
-}
+};
+
+export default CamperFeatures;

@@ -10,23 +10,47 @@ import {
 import Button from '../Button/Button';
 import Loader from '../Loader/Loader';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import PropTypes from 'prop-types';
+import { useEffect, useRef } from 'react';
 
-export default function CampersList({ handleClick, page }) {
+const CampersList = ({ handleClick, page }) => {
   const campers = useSelector(selectCampers);
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
   const totalPage = useSelector(selectTotalPage);
+  // ссылка на последнюю загруженную карточку
+  const lastLoadedCamperRef = useRef(null);
+
+  // эффект для прокрутки к первой дозагруженной карточке после клика
+  useEffect(() => {
+    if (lastLoadedCamperRef.current && page > 1) {
+      lastLoadedCamperRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  }, [campers, page]);
+
   return (
     <div>
-      <ul className={css.list}>
-        {campers.map(camper => {
-          return (
-            <li key={camper.id} className={css.item}>
-              <Camper props={camper} />
-            </li>
-          );
-        })}
-      </ul>
+      {campers.length > 0 && !error && !loading && (
+        <ul className={css.list}>
+          {campers.map((camper, index) => {
+            // добавляем реф только для первой дозагруженной карточки на текущей странице
+            const isLastLoadedCamper = index === (page - 1) * 4;
+            return (
+              <li
+                key={camper.id}
+                className={css.item}
+                // присваиваем реф
+                ref={isLastLoadedCamper ? lastLoadedCamperRef : null}
+              >
+                <Camper props={camper} />
+              </li>
+            );
+          })}
+        </ul>
+      )}
       {loading && <Loader />}
       {error && <ErrorMessage>{error}</ErrorMessage>}
       {campers.length > 0 && page < totalPage && (
@@ -36,4 +60,11 @@ export default function CampersList({ handleClick, page }) {
       )}
     </div>
   );
-}
+};
+
+CampersList.propTypes = {
+  page: PropTypes.number.isRequired,
+  handleClick: PropTypes.func.isRequired,
+};
+
+export default CampersList;

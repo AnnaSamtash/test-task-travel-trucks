@@ -4,12 +4,13 @@ import { useId } from 'react';
 import { setFilters } from '../../redux/filters/slice.js';
 import { selectFilters } from '../../redux/filters/selectors.js';
 
-export default function SearchBox() {
+const SearchBox = () => {
   const dispatch = useDispatch();
   const locationId = useId();
   const handleFilterChange = newFilter => dispatch(setFilters(newFilter));
   const filters = useSelector(selectFilters);
 
+  // меняем вводимое значени в поле ввода после потери фокуса и записываем в фильтр в сторе
   const handleBlur = e => {
     let locationValue;
     if (e.target.value && !e.target.value.endsWith(', Ukraine')) {
@@ -39,4 +40,6 @@ export default function SearchBox() {
       </svg>
     </div>
   );
-}
+};
+
+export default SearchBox;

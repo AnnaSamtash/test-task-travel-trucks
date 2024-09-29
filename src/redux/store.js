@@ -12,6 +12,7 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import { modalReducer } from './modal/slice';
 
 const campersPersistConfig = {
   key: 'campers',
@@ -25,6 +26,7 @@ export const store = configureStore({
   reducer: {
     campers: persistedReducer,
     filters: filtersReducer,
+    modal: modalReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

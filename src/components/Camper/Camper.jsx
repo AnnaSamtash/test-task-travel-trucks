@@ -8,8 +8,10 @@ import {
 import clsx from 'clsx';
 import { Link, useLocation } from 'react-router-dom';
 import { selectSelectedCampers } from '../../redux/campers/selectors';
+import PropTypes from 'prop-types';
+import { openModal } from '../../redux/modal/slice';
 
-export default function Camper({ props }) {
+const Camper = ({ props }) => {
   const dispatch = useDispatch();
   const camperLocation = useLocation();
   const selectedCampers = useSelector(selectSelectedCampers);
@@ -32,17 +34,35 @@ export default function Camper({ props }) {
     reviews,
   } = props;
 
+  // проверяем, есть ли кэмпер в списке избранных
   const isSelected = selectedCampers.some(camper => camper.id === id);
+
+  // устанавливаем цвет звезды в зависимости от наличия рейтинга
+  const getStarClass = rating =>
+    clsx(css.default, rating > 0 && css.icon_rating);
 
   return (
     <div className={css.container}>
       <div className={css.tumb}>
-        <img className={css.img} src={gallery[0]?.thumb} alt="name" />
+        <img
+          className={css.img}
+          src={gallery[0]?.thumb}
+          alt={name}
+          onClick={() =>
+            dispatch(
+              openModal({
+                img: gallery[0]?.original,
+                alt: { name } - 1,
+              })
+            )
+          }
+          loading="lazy"
+        />
       </div>
       <div className={css.info_container}>
         <div className={css.first_container}>
           <h2 className={css.title}>{name}</h2>
-          <h2 className={css.price}>{`\u20AC${price},00`}</h2>
+          <h2 className={css.price}>{`\u20AC${price}.00`}</h2>
           <Button
             variant="select"
             selected={isSelected}
@@ -59,7 +79,7 @@ export default function Camper({ props }) {
         </div>
 
         <div className={css.second_container}>
-          <svg className={clsx(css.default, rating > 0 && css.icon_rating)}>
+          <svg className={getStarClass(rating)}>
             <use href="/svgSprite.svg#icon-starDefault"></use>
           </svg>
           <p
@@ -139,4 +159,10 @@ export default function Camper({ props }) {
       </div>
     </div>
   );
-}
+};
+
+Camper.propTypes = {
+  props: PropTypes.object.isRequired,
+};
+
+export default Camper;

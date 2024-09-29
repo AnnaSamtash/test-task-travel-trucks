@@ -15,6 +15,9 @@ Features:
 - Detailed Camper Page with specifications, user reviews, a photo gallery, and a
   booking form.
 
+- You can view the camper's photo in more detail by clicking on it, which will
+  open a modal window with a larger version of the photo.
+
 - Favorites Functionality: Users can add campers to their favorites list, which
   persists across page reloads.
 
@@ -61,9 +64,25 @@ Technologies
 
 - Axios for API requests
 
-- CSS Modules or your preferred CSS library
+- CSS Modules, library clsx
 
-- React Persist to handle state persistence
+- libraries Formik and Yup for form adjustment and validation
+
+- Library Modern-normalize to add normalization styles to the project
+
+- Library React-datepicker for custom calendar render
+
+- Library React-helmet-async to encapsulate data on a per-request basis
+
+- Library React-icons
+
+- Library React-loader-spinner for render component Loader during loading
+
+- Library React-modal for render modal dialog component with camper's photo
+
+- Library React-toastify to add notifications to the app
+
+- Redux-Persist to handle state persistence
 
 Usage
 

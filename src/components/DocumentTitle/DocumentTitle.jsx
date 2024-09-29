@@ -1,9 +1,11 @@
 import { Helmet } from 'react-helmet-async';
 
-export default function DocumentTitle({ children }) {
+const DocumentTitle = ({ children }) => {
   return (
     <Helmet>
       <title>{children}</title>
     </Helmet>
   );
-}
+};
+
+export default DocumentTitle;

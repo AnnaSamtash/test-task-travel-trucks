@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import DocumentTitle from '../../components/DocumentTitle/DocumentTitle';
 import css from './HomePage.module.css';
 
-export default function HomePage() {
+const HomePage = () => {
   return (
     <div className={css.wrapper}>
       <DocumentTitle>Home</DocumentTitle>
@@ -17,4 +17,6 @@ export default function HomePage() {
       </div>
     </div>
   );
-}
+};
+
+export default HomePage;
