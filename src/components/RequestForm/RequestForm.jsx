@@ -39,10 +39,8 @@ const RequestForm = () => {
           comment: values.comment,
         };
         postRequest(newRequest)
-          .unwrap()
           .then(() => {
             showToast('Request successfully sent!', 'success');
-            actions.resetForm();
           })
           .catch(() => {
             showToast('Request didn`t send!', 'error');

@@ -24,7 +24,7 @@ Button.propTypes = {
   type: PropTypes.string,
   variant: PropTypes.string.isRequired,
   selected: PropTypes.bool,
-  handleClick: PropTypes.func.isRequired,
+  handleClick: PropTypes.func,
 };
 
 export default Button;

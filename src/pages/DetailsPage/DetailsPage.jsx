@@ -79,7 +79,7 @@ const DetailsPage = () => {
                         dispatch(
                           openModal({
                             img: gallery[0]?.original,
-                            alt: { name } - 1,
+                            alt: `Photo ${name} - 1`,
                           })
                         )
                       }
@@ -95,7 +95,7 @@ const DetailsPage = () => {
                         dispatch(
                           openModal({
                             img: gallery[1]?.original,
-                            alt: { name } - 2,
+                            alt: `Photo ${name} - 2`,
                           })
                         )
                       }
@@ -111,7 +111,7 @@ const DetailsPage = () => {
                         dispatch(
                           openModal({
                             img: gallery[2]?.original,
-                            alt: { name } - 3,
+                            alt: `Photo ${name} - 3`,
                           })
                         )
                       }
