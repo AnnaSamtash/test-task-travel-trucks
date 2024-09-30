@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
 import DocumentTitle from '../../components/DocumentTitle/DocumentTitle';
 import css from './HomePage.module.css';
+import PageLink from '../../components/PageLink/PageLink';
 
 const HomePage = () => {
   return (
@@ -11,9 +11,9 @@ const HomePage = () => {
         <h2 className={css.text}>
           You can find everything you want in our catalog
         </h2>
-        <Link className={css.link} to={'/catalog'}>
+        <PageLink to="/catalog" style={{ width: '173px', height: '56px' }}>
           View Now
-        </Link>
+        </PageLink>
       </div>
     </div>
   );

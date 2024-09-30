@@ -6,10 +6,11 @@ import {
   setCamperSelected,
 } from '../../redux/campers/slice';
 import clsx from 'clsx';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { selectSelectedCampers } from '../../redux/campers/selectors';
 import PropTypes from 'prop-types';
 import { openModal } from '../../redux/modal/slice';
+import PageLink from '../PageLink/PageLink';
 
 const Camper = ({ props }) => {
   const dispatch = useDispatch();
@@ -161,9 +162,13 @@ const Camper = ({ props }) => {
             </div>
           )}
         </div>
-        <Link className={css.link} to={`/catalog/${id}`} state={camperLocation}>
+        <PageLink
+          to={`/catalog/${id}`}
+          state={camperLocation}
+          style={{ width: '166px', height: '56px' }}
+        >
           Show more
-        </Link>
+        </PageLink>
       </div>
     </div>
   );

@@ -28,17 +28,3 @@
     margin-top: 16px;
     margin-bottom: 40px;
 }
-
-.link {
-    padding: 16px 60px;
-    background-color: var(--button-color);
-    border-radius: 200px;
-    color: var(--white-color);
-    width: 173px;
-    transition: background-color var(--transition-timing-function);
-}
-
-.link:hover,
-.link:focus {
-    background-color: var(--button-hover-color);
-}

@@ -1,12 +1,14 @@
 .link {
     display: inline-flex;
+    justify-content: center;
     align-items: center;
-    padding: 16px 60px;
     background-color: var(--button-color);
     border-radius: 200px;
     color: var(--white-color);
+    font-size: inherit;
     gap: 4px;
-    text-transform: uppercase;
+    white-space: nowrap;
+    flex-shrink: 2;
     transition: background-color var(--transition-timing-function);
 }
 

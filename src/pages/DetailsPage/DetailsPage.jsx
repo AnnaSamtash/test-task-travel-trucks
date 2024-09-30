@@ -12,9 +12,10 @@ import {
 import { fetchCamperById } from '../../redux/campers/operations';
 import Loader from '../../components/Loader/Loader';
 import NotFoundPage from '../NotFoundPage/NotFoundPage';
-import BackLink from '../../components/BackLink/BackLink';
+import PageLink from '../../components/PageLink/PageLink';
 import RequestForm from '../../components/RequestForm/RequestForm';
 import { openModal } from '../../redux/modal/slice';
+import { HiArrowLeft } from 'react-icons/hi';
 
 const DetailsPage = () => {
   const { id } = useParams();
@@ -44,7 +45,13 @@ const DetailsPage = () => {
   return (
     <div className={css.wrapper}>
       <DocumentTitle>DetailsPage</DocumentTitle>
-      <BackLink to={backLinkHref.current}>Go back</BackLink>
+      <PageLink
+        to={backLinkHref.current}
+        style={{ width: '173px', height: '56px' }}
+      >
+        <HiArrowLeft size="18" />
+        Go back
+      </PageLink>
       {loading && <Loader />}
       {error && <NotFoundPage />}
       {camperDetails && (

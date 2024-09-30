@@ -25,6 +25,7 @@ Button.propTypes = {
   variant: PropTypes.string.isRequired,
   selected: PropTypes.bool,
   handleClick: PropTypes.func,
+  children: PropTypes.node,
 };
 
 export default Button;

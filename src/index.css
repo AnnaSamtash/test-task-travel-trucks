@@ -66,9 +66,7 @@ img {
 }
 
 a {
-  color: currentColor;
   text-decoration: none;
-  transition: color var(--transition-timing-function);
 }
 
 button {

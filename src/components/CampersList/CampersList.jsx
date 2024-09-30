@@ -33,7 +33,7 @@ const CampersList = ({ handleClick, page }) => {
 
   return (
     <div>
-      {campers.length > 0 && !error && !loading && (
+      {campers.length > 0 && !error && (
         <ul className={css.list}>
           {campers.map((camper, index) => {
             // добавляем реф только для первой дозагруженной карточки на текущей странице
