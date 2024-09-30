@@ -7,8 +7,6 @@
     color: var(--white-color);
     font-size: inherit;
     gap: 4px;
-    white-space: nowrap;
-    flex-shrink: 2;
     transition: background-color var(--transition-timing-function);
 }
 
