@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import './CustomDatePicker.css';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -16,6 +17,19 @@ const CustomDatePicker = ({ field, form, ...props }) => {
       className="customDatePicker"
     />
   );
+};
+
+CustomDatePicker.propTypes = {
+  field: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
+  }).isRequired,
+  form: PropTypes.shape({
+    setFieldValue: PropTypes.func.isRequired,
+  }).isRequired,
+  placeholderText: PropTypes.string,
+  formatWeekDay: PropTypes.func,
+  className: PropTypes.string,
 };
 
 export default CustomDatePicker;

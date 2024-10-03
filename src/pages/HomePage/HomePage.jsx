@@ -5,7 +5,7 @@ import PageLink from '../../components/PageLink/PageLink';
 const HomePage = () => {
   return (
     <div className={css.wrapper}>
-      <DocumentTitle>Home</DocumentTitle>
+      <DocumentTitle>TravelTrucks app/Home Page </DocumentTitle>
       <div className={css.text_container}>
         <h1>Campers of your dreams</h1>
         <h2 className={css.text}>

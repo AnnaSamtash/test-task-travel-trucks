@@ -44,7 +44,7 @@ const DetailsPage = () => {
 
   return (
     <div className={css.wrapper}>
-      <DocumentTitle>DetailsPage</DocumentTitle>
+      <DocumentTitle>TravelTrucks app/Details Page</DocumentTitle>
       <PageLink
         to={backLinkHref.current}
         style={{ width: '173px', height: '56px' }}

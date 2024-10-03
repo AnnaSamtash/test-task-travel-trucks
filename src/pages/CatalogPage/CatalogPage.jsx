@@ -42,7 +42,7 @@ const CatalogPage = () => {
 
   return (
     <div className={css.wrapper}>
-      <DocumentTitle>CatalogPage</DocumentTitle>
+      <DocumentTitle>TravelTrucks app/Catalog Page</DocumentTitle>
       <SideBar />
       {!error && campers.length > 0 && (
         <CampersList handleClick={handleClick} page={page} />

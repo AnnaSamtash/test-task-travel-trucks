@@ -11,7 +11,7 @@ const PageLink = ({ to, state, style, children }) => {
 };
 
 PageLink.propTypes = {
-  to: PropTypes.string.isRequired,
+  to: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
   state: PropTypes.object,
   style: PropTypes.object,
   children: PropTypes.node,
